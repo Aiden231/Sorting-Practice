@@ -1,2 +1,2 @@
-# Sorting Pracice ( Selecion, Insertion, Bubble )
+# Sorting Practice ( Selecion, Insertion, Bubble )
 ![](./result.png)
