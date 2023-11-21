@@ -7,7 +7,7 @@
 int list[MAX_SIZE];
 int n;
 
-// ¼±ÅÃ Á¤·Ä ÇÔ¼ö
+// ì„ íƒ ì •ë ¬ í•¨ìˆ˜
 void selection_sort(int list[], int n, int* move_count, int* compare_count, int print) {
 	int least, temp;
 
@@ -15,7 +15,7 @@ void selection_sort(int list[], int n, int* move_count, int* compare_count, int 
 		least = i;
 		(*move_count)++;
 
-		// print°¡ 1ÀÏ °æ¿ì¿¡¸¸ °úÁ¤ Ãâ·Â
+		// printê°€ 1ì¼ ê²½ìš°ì—ë§Œ ê³¼ì • ì¶œë ¥
 		if (print == 1) {
 			for (int k = 0; k < n; k++) {
 				printf("%d ", list[k]);
@@ -31,14 +31,14 @@ void selection_sort(int list[], int n, int* move_count, int* compare_count, int 
 	}
 }
 
-// »ğÀÔ Á¤·Ä ÇÔ¼ö
+// ì‚½ì… ì •ë ¬ í•¨ìˆ˜
 void insertion_sort(int list[], int n, int* move_count, int* compare_count, int print) {
 	int i,j,key;
 
 	for (i = 1; i < n; i++) {
 		key = list[i];
 	
-		// print°¡ 1ÀÏ °æ¿ì¿¡¸¸ Á¤·Ä °úÁ¤ Ãâ·Â
+		// printê°€ 1ì¼ ê²½ìš°ì—ë§Œ ì •ë ¬ ê³¼ì • ì¶œë ¥
 		if (print == 1) {
 			for (int k = 0; k < n; k++) {
 				printf("%d ", list[k]);
@@ -55,13 +55,13 @@ void insertion_sort(int list[], int n, int* move_count, int* compare_count, int 
 	}
 }
 
-// ¹öºí Á¤·Ä ÇÔ¼ö
+// ë²„ë¸” ì •ë ¬ í•¨ìˆ˜
 void bubble_sort(int list[], int n, int* move_count, int* compare_cout, int print) {
 	int temp;
 
 	for (int i = n - 1; i > 0; i--) {
 
-		// print°¡ 1ÀÏ °æ¿ì¿¡¸¸ Á¤·Ä °úÁ¤ Ãâ·Â
+		// printê°€ 1ì¼ ê²½ìš°ì—ë§Œ ì •ë ¬ ê³¼ì • ì¶œë ¥
 		if (print == 1) {
 			for (int k = 0; k < n; k++) {
 				printf("%d ", list[k]);
@@ -82,35 +82,35 @@ void bubble_sort(int list[], int n, int* move_count, int* compare_cout, int prin
 int main()
 {
 	n = MAX_SIZE;
-	// ÀÌµ¿ È½¼ö, ºñ±³ È½¼ö º¯¼ö
+	// ì´ë™ íšŸìˆ˜, ë¹„êµ íšŸìˆ˜ ë³€ìˆ˜
 	int move_count = 0;
 	int compare_count = 0;
-	// ÀÌµ¿ È½¼ö ÇÕ, ºñ±³ È½¼ö ÇÕ
+	// ì´ë™ íšŸìˆ˜ í•©, ë¹„êµ íšŸìˆ˜ í•©
 	int sum_move = 0;
 	int sum_compare = 0;
-	// ¼±ÅÃ Á¤·Ä ÀÌµ¿, ºñ±³ È½¼ö ¹è¿­ ¹× Æò±Õ°ª ÀúÀå º¯¼ö
+	// ì„ íƒ ì •ë ¬ ì´ë™, ë¹„êµ íšŸìˆ˜ ë°°ì—´ ë° í‰ê· ê°’ ì €ì¥ ë³€ìˆ˜
 	int move_sel[MAX_SIZE] = { 0 };
 	int compare_sel[MAX_SIZE] = { 0 };
 	double average_move_sel = 0;
 	double average_compare_sel = 0;
-	// »ğÀÔ Á¤·Ä ÀÌµ¿, ºñ±³ È½¼ö ¹è¿­ ¹× Æò±Õ°ª ÀúÀå º¯¼ö
+	// ì‚½ì… ì •ë ¬ ì´ë™, ë¹„êµ íšŸìˆ˜ ë°°ì—´ ë° í‰ê· ê°’ ì €ì¥ ë³€ìˆ˜
 	int move_insert[MAX_SIZE] = { 0 };
 	int compare_insert[MAX_SIZE] = { 0 };
 	double average_move_insert = 0;
 	double average_compare_insert = 0;
-	// ¹öºí Á¤·Ä ÀÌµ¿, ºñ±³ È½¼ö ¹è¿­ ¹× Æò±Õ°ª ÀúÀå º¯¼ö
+	// ë²„ë¸” ì •ë ¬ ì´ë™, ë¹„êµ íšŸìˆ˜ ë°°ì—´ ë° í‰ê· ê°’ ì €ì¥ ë³€ìˆ˜
 	int move_bubble[MAX_SIZE] = { 0 };
 	int compare_bubble[MAX_SIZE] = { 0 };
 	double average_move_bubble = 0;
 	double average_compare_bubble = 0;
 
-	// ³­¼ö ¸®½ºÆ® »ı¼º
+	// ë‚œìˆ˜ ë¦¬ìŠ¤íŠ¸ ìƒì„±
 	srand(time(NULL));
 	for (int i = 0; i < n; i++) {
 		list[i] = rand() % 100;
 	}
 
-	// ¼±ÅÃ Á¤·Ä
+	// ì„ íƒ ì •ë ¬
 
 	printf("Original List\n");
 	for (int i = 0; i < n; i++) {
@@ -130,13 +130,13 @@ int main()
 	printf("Compare : %d\n", compare_count);
 	compare_sel[0] = compare_count;
 
-	// »ğÀÔ Á¤·Ä
+	// ì‚½ì… ì •ë ¬
 
-	// ÀÌµ¿ ¹× ºñ±³ È½¼ö ÃÊ±âÈ­
+	// ì´ë™ ë° ë¹„êµ íšŸìˆ˜ ì´ˆê¸°í™”
 	move_count = 0;
 	compare_count = 0;
 
-	// ³­¼ö ¸®½ºÆ® »ı¼º
+	// ë‚œìˆ˜ ë¦¬ìŠ¤íŠ¸ ìƒì„±
 	for (int i = 0; i < n; i++) {
 		list[i] = rand() % 100;
 	}
@@ -157,13 +157,13 @@ int main()
 	printf("Compare : %d\n", compare_count);
 	compare_insert[0] = compare_count;
 
-	// ¹öºí Á¤·Ä
+	// ë²„ë¸” ì •ë ¬
 
-	// ÀÌµ¿ ¹× ºñ±³ È½¼ö ÃÊ±âÈ­
+	// ì´ë™ ë° ë¹„êµ íšŸìˆ˜ ì´ˆê¸°í™”
 	move_count = 0;
 	compare_count = 0;
 
-	// ³­¼ö ¸®½ºÆ® »ı¼º
+	// ë‚œìˆ˜ ë¦¬ìŠ¤íŠ¸ ìƒì„±
 	for (int i = 0; i < n; i++) {
 		list[i] = rand() % 100;
 	}
@@ -184,7 +184,7 @@ int main()
 	printf("Compare : %d\n", compare_count);
 	compare_bubble[0] = compare_count;
 
-	// ¼±ÅÃ Á¤·Ä ¹İº¹ ½ÃÇà
+	// ì„ íƒ ì •ë ¬ ë°˜ë³µ ì‹œí–‰
 
 	for (int i = 1; i < MAX_SIZE; i++) {
 		move_count = 0;
@@ -208,7 +208,7 @@ int main()
 	average_move_sel = sum_move / 20;
 	average_compare_sel = sum_compare / 20;
 
-	// »ğÀÔ Á¤·Ä ¹İº¹ ½ÃÇà
+	// ì‚½ì… ì •ë ¬ ë°˜ë³µ ì‹œí–‰
 
 	for (int i = 1; i < MAX_SIZE; i++) {
 		move_count = 0;
@@ -224,7 +224,7 @@ int main()
 		compare_insert[i] = compare_count;
 	}
 
-	// ÀÌµ¿È½¼ö,ºñ±³È½¼ö ÇÕ º¯¼ö ÃÊ±âÈ­
+	// ì´ë™íšŸìˆ˜,ë¹„êµíšŸìˆ˜ í•© ë³€ìˆ˜ ì´ˆê¸°í™”
 	sum_move = 0;
 	sum_compare = 0;
 
@@ -236,7 +236,7 @@ int main()
 	average_move_insert = sum_move / 20;
 	average_compare_insert = sum_compare / 20;
 
-	// ¹öºí Á¤·Ä ¹İº¹ ½ÃÇà
+	// ë²„ë¸” ì •ë ¬ ë°˜ë³µ ì‹œí–‰
 
 	for (int i = 1; i < MAX_SIZE; i++) {
 		move_count = 0;
@@ -252,7 +252,7 @@ int main()
 		compare_bubble[i] = compare_count;
 	}
 
-	// ÀÌµ¿È½¼ö,ºñ±³È½¼ö ÇÕ º¯¼ö ÃÊ±âÈ­
+	// ì´ë™íšŸìˆ˜,ë¹„êµíšŸìˆ˜ í•© ë³€ìˆ˜ ì´ˆê¸°í™”
 	sum_move = 0;
 	sum_compare = 0;
 
@@ -264,14 +264,14 @@ int main()
 	average_move_bubble = sum_move / 20;
 	average_compare_bubble = sum_compare / 20;
 
-	// Æò±Õ Ãâ·Â
-	printf("\n°¢ Á¤·Äº° Æò±Õ È½¼ö\n");
-	printf("¼±ÅÃ Á¤·Ä Æò±Õ ÀÌµ¿ È½¼ö : %f\n", average_move_sel);
-	printf("¼±ÅÃ Á¤·Ä Æò±Õ ºñ±³ È½¼ö : %f\n\n", average_compare_sel);
-	printf("»ğÀÔ Á¤·Ä Æò±Õ ÀÌµ¿ È½¼ö : %f\n", average_move_insert);
-	printf("»ğÀÔ Á¤·Ä Æò±Õ ºñ±³ È½¼ö : %f\n\n", average_compare_insert);
-	printf("¹öºí Á¤·Ä Æò±Õ ÀÌµ¿ È½¼ö : %f\n", average_move_bubble);
-	printf("¹öºí Á¤·Ä Æò±Õ ºñ±³ È½¼ö : %f\n\n", average_compare_bubble);
+	// í‰ê·  ì¶œë ¥
+	printf("\nê° ì •ë ¬ë³„ í‰ê·  íšŸìˆ˜\n");
+	printf("ì„ íƒ ì •ë ¬ í‰ê·  ì´ë™ íšŸìˆ˜ : %f\n", average_move_sel);
+	printf("ì„ íƒ ì •ë ¬ í‰ê·  ë¹„êµ íšŸìˆ˜ : %f\n\n", average_compare_sel);
+	printf("ì‚½ì… ì •ë ¬ í‰ê·  ì´ë™ íšŸìˆ˜ : %f\n", average_move_insert);
+	printf("ì‚½ì… ì •ë ¬ í‰ê·  ë¹„êµ íšŸìˆ˜ : %f\n\n", average_compare_insert);
+	printf("ë²„ë¸” ì •ë ¬ í‰ê·  ì´ë™ íšŸìˆ˜ : %f\n", average_move_bubble);
+	printf("ë²„ë¸” ì •ë ¬ í‰ê·  ë¹„êµ íšŸìˆ˜ : %f\n\n", average_compare_bubble);
 
 	return 0;
 }
