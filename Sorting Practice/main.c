@@ -64,18 +64,19 @@ int main()
 	}
 	printf("\n\n");
 
-	//printf("Selection List\n");
-	//selection_sort(list, n, &move_count, &compare_count);
+	// 선택 정렬
+	printf("Selection List\n");
+	selection_sort(list, n, &move_count, &compare_count);
 
-	//for (int i = 0; i < n; i++) {
-	//	printf("%d ", list[i]);
-	//}
-	//printf("\n");
-	//printf("Move : %d\n", move_count);
-	//printf("Compare : %d\n", compare_count);
+	for (int i = 0; i < n; i++) {
+		printf("%d ", list[i]);
+	}
+	printf("\n");
+	printf("Move : %d\n", move_count);
+	printf("Compare : %d\n", compare_count);
 
-	//move_count, compare_count = 0;
-
+	// 삽입 정렬
+	move_count, compare_count = 0;
 	printf("\nInsertion List\n");
 	insertion_sort(list, n, &move_count, &compare_count);
 	for (int i = 0; i < n; i++) {
